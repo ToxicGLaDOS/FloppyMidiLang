@@ -16,7 +16,7 @@ The program takes 4 arugments.
 # Syntax:
 (Note as a letter)(Flat or Sharp)(Octave) (Quarter note multiplier)
 
-# Details:
+## Details:
 (Note as a letter) - Acceptable values are a,b,c,d,e,f,g this is not case sensitive.
 
 (Flat or Sharp) - Acceptable values are #,b. # indicates sharp and b indicates flat. This is optional and if not found will result in a normal note.
