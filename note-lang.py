@@ -45,12 +45,13 @@ with open(readFile, "r") as read:
         # 1: Sharp or flat (optional)
         # 2: Any single number 0-9
         # 3: At least one number from 0-9 (optional)
-        # 4: Any amount of whitespace (optional)
+        # 4: Dot followed by any number of numbers (optional)
+        # 5: Any amount of whitespace (optional)
         # Examples: 
         # c4 1000 \n\n
         # b1        \n \n               \n
         # DOES NOT SUPPORT NEGATIVE OCTAVES
-        notes = re.findall(r'([A-Ga-g])([#|b])?([0-9])\s*([0-9]+)?(\s*)?', data)
+        notes = re.findall(r'([A-Ga-g])([#|b])?([0-9])\s*([0-9]+)?(.[0-9]*)?(\s*)?', data)
         for note in notes:
             letter = note[0]
             shift = 0
@@ -61,8 +62,9 @@ with open(readFile, "r") as read:
 
             octave = int(note[2])
             # Turnary operator in python
-            # if duration is matched that is duration, otherwise use quarterNoteLength
-            duration = quarterNoteLength * float(note[3]) if note[3] else quarterNoteLength
+            # if duration it's the duration time the length of a quarter note
+            # otherwise it's just quarterNoteLength
+            duration = quarterNoteLength * float(note[3] + note[4]) if note[3] else quarterNoteLength
             write.write("on " + str(midiNumber(letter, octave, shift)) + " 127\n")
             write.write(formatTime(duration)+"\n")
             write.write("off " + str(midiNumber(letter, octave, shift)) + " 127\n")
