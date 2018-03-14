@@ -54,7 +54,7 @@ with open(readFile, "r") as read:
         # b1        \n \n               \n
         # DOES NOT SUPPORT NEGATIVE OCTAVES
         notes = re.findall(r'([A-Ga-g])([#|b])?([0-9])\s*([0-9]+)?(.[0-9]*)?(\s*)?', data)
-        write.write("dev " + "\"" + deviceName + "\"")
+        write.write("dev " + "\"" + deviceName + "\"\n")
         for note in notes:
             letter = note[0]
             shift = 0
