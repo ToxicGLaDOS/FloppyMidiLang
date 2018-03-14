@@ -24,10 +24,11 @@ def midiNumber(letter, octave, shift):
 
 args = sys.argv
 quarterNoteLength = float(args[1])
-readFile = args[2]
-writeFile = args[3]
+notePadding = args[2]
+readFile = args[3]
+writeFile = args[4]
 # Time in millis between notes
-notePadding = 50 
+
 
 
 with open(readFile, "r") as read:
