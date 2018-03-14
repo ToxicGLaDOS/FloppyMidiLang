@@ -3,7 +3,7 @@ A small language to make writing simple tunes in SendMIDI easier.
 
 This program will interpret a text file and generate another text file with corresponding SendMIDI code.
 
-#Limitations:
+# Limitations:
 This "language" is very simple and cannot currently support very much. Currently there is no support for playing multiple notes at the same time, note volume, audio channels and much more. This "language" is only intended to be used as a way to create SendMIDI code for single notes at a time.
 
 
@@ -13,10 +13,10 @@ The program takes 4 arugments.
 3. Relative path to input file
 4. Relative path to output file
 
-#Syntax:
+# Syntax:
 (Note as a letter)(Flat or Sharp)(Octave) (Quarter note multiplier)
 
-#Details:
+# Details:
 (Note as a letter) - Acceptable values are a,b,c,d,e,f,g this is not case sensitive.
 
 (Flat or Sharp) - Acceptable values are #,b. # indicates sharp and b indicates flat. This is optional and if not found will result in a normal note.
@@ -25,9 +25,9 @@ The program takes 4 arugments.
 
 (Quarter note multiplier) - Acceptable values are any number integer or decimal. This determines the length of the note. The note will be played for the duration of this many quarter notes. So if this value is 2 we have a half note, 4 is a whole note and 1.5 is a dotted quarter note. For convience this is optional and if not found will default to 1 (a quarter note).
 
-#Examples:
+# Examples:
 
-##note-lang examples:
+## note-lang examples:
 Here are various notes with the corresponding SendMIDI code they will generate and the musical meaning. This code was generated with 100 millisecond quarter notes and 50 milliseconds of note padding.
 
 A C-sharp in the 4th octave dotted quarter note
@@ -56,7 +56,7 @@ on 102 127
 off 102 127
 +00:00:00:050
 '''
-##Calling the script:
+## Calling the script:
 Lets say we want to create a song where a quarter note is half a second long and the space between notes is 50 milliseconds and we have a text file containing our input note data called input.txt and we want to create an output file name output.txt. We would call our script like so:
 
 note-lang.py 500 50 input.txt output.txt
