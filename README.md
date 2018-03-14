@@ -7,11 +7,12 @@ This program will interpret a text file and generate another text file with corr
 This "language" is very simple and cannot currently support very much. Currently there is no support for playing multiple notes at the same time, note volume, audio channels and much more. This "language" is only intended to be used as a way to create SendMIDI code for single notes at a time.
 
 
-The program takes 4 arugments.
-1. Length of a quarter note in milliseconds
-2. Length of pauses between notes in milliseconds
-3. Relative path to input file
-4. Relative path to output file
+The program takes 5 arugments.
+1. Name of the device to output to
+2. Length of a quarter note in milliseconds
+3. Length of pauses between notes in milliseconds
+4. Relative path to input file
+5. Relative path to output file
 
 # Syntax:
 (Note as a letter)(Flat or Sharp)(Octave) (Quarter note multiplier)
@@ -69,6 +70,6 @@ off 102 127
 +00:00:00:050
 ```
 ## Calling the script:
-Lets say we want to create a song where a quarter note is half a second long and the space between notes is 50 milliseconds and we have a text file containing our input note data called input.txt and we want to create an output file name output.txt. We would call our script like so:
+Lets say we want to create a song where a quarter note is half a second long, the space between notes is 50 milliseconds, we have a text file containing our input note data called input.txt, we want to create an output file name output.txt and our device is named "SparkFun Pro Micro MIDI 1". We would call our script like so:
 
-note-lang.py 500 50 input.txt output.txt
+note-lang.py "SparkFun Pro Micro MIDI 1" 500 50 input.txt output.txt
