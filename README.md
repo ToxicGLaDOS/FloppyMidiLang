@@ -31,31 +31,43 @@ The program takes 4 arugments.
 Here are various notes with the corresponding SendMIDI code they will generate and the musical meaning. This code was generated with 100 millisecond quarter notes and 50 milliseconds of note padding.
 
 A C-sharp in the 4th octave dotted quarter note
-'''
+```
 c#4 1.5
+
 on 61 127
+
 +00:00:00:150
+
 off 61 127
+
 +00:00:00:050
-'''
+```
 
 An A-natural in the 5th octave half note
-'''
+```
 a5 2
+
 on 81 127
+
 +00:00:00:200
+
 off 81 127
+
 +00:00:00:050
-'''
+```
 
 A G-flat in the 7th octave half note
-'''
+```
 gb7 2
+
 on 102 127
+
 +00:00:00:200
+
 off 102 127
+
 +00:00:00:050
-'''
+```
 ## Calling the script:
 Lets say we want to create a song where a quarter note is half a second long and the space between notes is 50 milliseconds and we have a text file containing our input note data called input.txt and we want to create an output file name output.txt. We would call our script like so:
 
