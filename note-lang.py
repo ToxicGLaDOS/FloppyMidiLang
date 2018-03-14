@@ -23,10 +23,11 @@ def midiNumber(letter, octave, shift):
 
 
 args = sys.argv
-quarterNoteLength = float(args[1])
-notePadding = args[2]
-readFile = args[3]
-writeFile = args[4]
+deviceName = args[1]
+quarterNoteLength = float(args[2])
+notePadding = args[3]
+readFile = args[4]
+writeFile = args[5]
 # Time in millis between notes
 
 
@@ -53,6 +54,7 @@ with open(readFile, "r") as read:
         # b1        \n \n               \n
         # DOES NOT SUPPORT NEGATIVE OCTAVES
         notes = re.findall(r'([A-Ga-g])([#|b])?([0-9])\s*([0-9]+)?(.[0-9]*)?(\s*)?', data)
+        write.write("dev " + "\"" + deviceName + "\"")
         for note in notes:
             letter = note[0]
             shift = 0
