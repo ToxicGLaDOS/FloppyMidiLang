@@ -58,7 +58,6 @@ with open(readFile, "r") as read:
         noteData = re.findall(r'((([A-Ga-g])([#|b])?([0-9])\s+)+)([0-9]+)?(.[0-9]*)?(\s*)?', data)
         write.write("dev " + "\"" + deviceName + "\"\n")
         for note_data in noteData:
-            print note_data
             notes = note_data[0].split()
             notes = [note.strip() for note in notes]
             for note in notes:
